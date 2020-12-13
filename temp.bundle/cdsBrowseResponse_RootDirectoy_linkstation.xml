@@ -1,0 +1,10 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <s:Body>
+    <u:BrowseResponse xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+      <Result>&lt;DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/" xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" xmlns:arib="urn:schemas-arib-or-jp:elements-1-0/" xmlns:dtcp="urn:schemas-dtcp-com:metadata-1-0/" xmlns:pv="http://www.pv.com/pvns/" xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/"&gt;&lt;container id="0$2" parentID="0" restricted="1" childCount="8" searchable="1"&gt;&lt;dc:title&gt;Bilder&lt;/dc:title&gt;&lt;pv:modificationTime&gt;946681378&lt;/pv:modificationTime&gt;&lt;upnp:class&gt;object.container&lt;/upnp:class&gt;&lt;/container&gt;&lt;container id="0$1" parentID="0" restricted="1" childCount="11" searchable="1"&gt;&lt;dc:title&gt;Musik&lt;/dc:title&gt;&lt;pv:modificationTime&gt;946681369&lt;/pv:modificationTime&gt;&lt;upnp:class&gt;object.container&lt;/upnp:class&gt;&lt;/container&gt;&lt;container id="0$3" parentID="0" restricted="1" childCount="7" searchable="1"&gt;&lt;dc:title&gt;Videos&lt;/dc:title&gt;&lt;pv:modificationTime&gt;946681373&lt;/pv:modificationTime&gt;&lt;upnp:class&gt;object.container&lt;/upnp:class&gt;&lt;/container&gt;&lt;/DIDL-Lite&gt;</Result>
+      <NumberReturned>3</NumberReturned>
+      <TotalMatches>3</TotalMatches>
+      <UpdateID>12</UpdateID>
+    </u:BrowseResponse>
+  </s:Body>
+</s:Envelope>

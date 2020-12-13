@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Body>
+		<u:BrowseResponse xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+			<Result>
+				<DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:arib="urn:schemas-arib-or-jp:elements-1-0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" xmlns:dtcp="urn:schemas-dtcp-com:metadata-1-0/" xmlns:pv="http://www.pv.com/pvns/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+					<item id="0$1$15$189$25883$28907R7387402" parentID="0$1$15$189$25883$28907" refID="0$1$8I7387402" restricted="1">
+						<dc:title>Dreh dich nicht um</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>10</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7387402.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817802</pv:modificationTime>
+						<pv:addedTime>1423520664</pv:addedTime>
+						<pv:lastUpdated>1422817802</pv:lastUpdated>
+						<upnp:author role="Composer">Gisbert Zu Knyphausen</upnp:author>
+						<upnp:artist role="Composer">Gisbert Zu Knyphausen</upnp:artist>
+						<res bitrate="529200" duration="0:02:35" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="5138167">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7387402.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7385610" parentID="0$1$15$189$25883$28907" refID="0$1$8I7385610" restricted="1">
+						<dc:title>Es Ist Still Auf Dem Rastplatz Krachgarten</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>4</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7385610.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817620</pv:modificationTime>
+						<pv:addedTime>1423520663</pv:addedTime>
+						<pv:lastUpdated>1422817620</pv:lastUpdated>
+						<upnp:author role="Composer">Gisbert Zu Knyphausen</upnp:author>
+						<upnp:artist role="Composer">Gisbert Zu Knyphausen</upnp:artist>
+						<res bitrate="529200" duration="0:03:00" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="5894505">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7385610.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7385354" parentID="0$1$15$189$25883$28907" refID="0$1$8I7385354" restricted="1">
+						<dc:title>Grau, Grau, Grau</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7385354.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817605</pv:modificationTime>
+						<pv:addedTime>1423520663</pv:addedTime>
+						<pv:lastUpdated>1422817605</pv:lastUpdated>
+						<upnp:author role="Composer">Jens Fricke/Frenzy Suhr/Gunnar Ennen/Sebastian Deufel</upnp:author>
+						<upnp:artist role="Composer">Jens Fricke/Frenzy Suhr/Gunnar Ennen/Sebastian Deufel</upnp:artist>
+						<res bitrate="529200" duration="0:04:16" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="8578188">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7385354.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7384842" parentID="0$1$15$189$25883$28907" refID="0$1$8I7384842" restricted="1">
+						<dc:title>Hey</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7384842.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817323</pv:modificationTime>
+						<pv:addedTime>1423520663</pv:addedTime>
+						<pv:lastUpdated>1422817323</pv:lastUpdated>
+						<upnp:author role="Composer">Gisbert Zu Knyphausen</upnp:author>
+						<upnp:artist role="Composer">Gisbert Zu Knyphausen</upnp:artist>
+						<res bitrate="529200" duration="0:03:06" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="6667118">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7384842.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7386890" parentID="0$1$15$189$25883$28907" refID="0$1$8I7386890" restricted="1">
+						<dc:title>Hurra, Hurra ! So Nicht</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>9</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7386890.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817719</pv:modificationTime>
+						<pv:addedTime>1423520664</pv:addedTime>
+						<pv:lastUpdated>1422817719</pv:lastUpdated>
+						<upnp:author role="Composer">Jens Fricke/Sebastian Deufel/Gunnar Ennen/Frenzy Suhr</upnp:author>
+						<upnp:artist role="Composer">Jens Fricke/Sebastian Deufel/Gunnar Ennen/Frenzy Suhr</upnp:artist>
+						<res bitrate="529200" duration="0:03:29" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="6885301">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7386890.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7385866" parentID="0$1$15$189$25883$28907" refID="0$1$8I7385866" restricted="1">
+						<dc:title>Ich bin Freund von Klischees und funkelnden Sternen</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>5</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7385866.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817638</pv:modificationTime>
+						<pv:addedTime>1423520663</pv:addedTime>
+						<pv:lastUpdated>1422817638</pv:lastUpdated>
+						<upnp:author role="Composer">Jens Fricke/Gunnar Ennen/Frenzy Suhr/Sebastian Deufel</upnp:author>
+						<upnp:artist role="Composer">Jens Fricke/Gunnar Ennen/Frenzy Suhr/Sebastian Deufel</upnp:artist>
+						<res bitrate="529200" duration="0:04:25" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="8701730">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7385866.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7386122" parentID="0$1$15$189$25883$28907" refID="0$1$8I7386122" restricted="1">
+						<dc:title>Kräne</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7386122.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817664</pv:modificationTime>
+						<pv:addedTime>1423520664</pv:addedTime>
+						<pv:lastUpdated>1422817664</pv:lastUpdated>
+						<upnp:author role="Composer">Jens Fricke/Gunnar Ennen/Frenzy Suhr/Sebastian Deufel</upnp:author>
+						<upnp:artist role="Composer">Jens Fricke/Gunnar Ennen/Frenzy Suhr/Sebastian Deufel</upnp:artist>
+						<res bitrate="529200" duration="0:04:09" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="8238358">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7386122.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7386634" parentID="0$1$15$189$25883$28907" refID="0$1$8I7386634" restricted="1">
+						<dc:title>Melancholie</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>8</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7386634.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817704</pv:modificationTime>
+						<pv:addedTime>1423520664</pv:addedTime>
+						<pv:lastUpdated>1422817704</pv:lastUpdated>
+						<upnp:author role="Composer">Gisbert Zu Knyphausen</upnp:author>
+						<upnp:artist role="Composer">Gisbert Zu Knyphausen</upnp:artist>
+						<res bitrate="529200" duration="0:02:17" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="4526737">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7386634.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7386378" parentID="0$1$15$189$25883$28907" refID="0$1$8I7386378" restricted="1">
+						<dc:title>Morsches Holz</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7386378.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817675</pv:modificationTime>
+						<pv:addedTime>1423520664</pv:addedTime>
+						<pv:lastUpdated>1422817675</pv:lastUpdated>
+						<upnp:author role="Composer">Jens Fricke/Sebastian Deufel/Frenzy Suhr/Gunnar Ennen</upnp:author>
+						<upnp:artist role="Composer">Jens Fricke/Sebastian Deufel/Frenzy Suhr/Gunnar Ennen</upnp:artist>
+						<res bitrate="529200" duration="0:05:06" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="10029548">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7386378.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7387146" parentID="0$1$15$189$25883$28907" refID="0$1$8I7387146" restricted="1">
+						<dc:title>Nichts als Gespenster</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>11</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7387146.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817785</pv:modificationTime>
+						<pv:addedTime>1423520664</pv:addedTime>
+						<pv:lastUpdated>1422817785</pv:lastUpdated>
+						<upnp:author role="Composer">Gunnar Ennen/Jens Fricke/Sebastian Deufel/Frenzy Suhr</upnp:author>
+						<upnp:artist role="Composer">Gunnar Ennen/Jens Fricke/Sebastian Deufel/Frenzy Suhr</upnp:artist>
+						<res bitrate="529200" duration="0:06:18" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="13218689">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7387146.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+					<item id="0$1$15$189$25883$28907R7385098" parentID="0$1$15$189$25883$28907" refID="0$1$8I7385098" restricted="1">
+						<dc:title>Seltsames Licht</dc:title>
+						<upnp:genre>Singer-Songwriter</upnp:genre>
+						<upnp:album>Hurra! Hurra! So Nicht</upnp:album>
+						<upnp:originalTrackNumber>2</upnp:originalTrackNumber>
+						<dc:creator>Gisbert zu Knyphausen</dc:creator>
+						<upnp:albumArtURI dlna:profileID="JPEG_TN">http://10.0.0.4:9050/disk/defaultalbumart/nocover_audio.jpg/O0$1$8I7385098.jpg?scale=160x160</upnp:albumArtURI>
+						<upnp:artist>Gisbert zu Knyphausen</upnp:artist>
+						<pv:extension>m4a</pv:extension>
+						<upnp:albumArtist>Gisbert zu Knyphausen</upnp:albumArtist>
+						<pv:modificationTime>1422817592</pv:modificationTime>
+						<pv:addedTime>1423520663</pv:addedTime>
+						<pv:lastUpdated>1422817592</pv:lastUpdated>
+						<upnp:author role="Composer">Sebastian Deufel/Frenzy Suhr/Gunnar Ennen/Jens Fricke</upnp:author>
+						<upnp:artist role="Composer">Sebastian Deufel/Frenzy Suhr/Gunnar Ennen/Jens Fricke</upnp:artist>
+						<res bitrate="529200" duration="0:05:34" protocolInfo="http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_OP=01;DLNA.ORG_FLAGS=01700000000000000000000000000000" size="11125746">http://10.0.0.4:9050/disk/DLNA-PNAAC_ISO_320-OP01-FLAGS01700000/O0$1$8I7385098.m4a</res>
+						<upnp:class>object.item.audioItem.musicTrack</upnp:class>
+					</item>
+				</DIDL-Lite>
+			</Result>
+			<NumberReturned>11</NumberReturned>
+			<TotalMatches>11</TotalMatches>
+			<UpdateID>1</UpdateID>
+		</u:BrowseResponse>
+	</s:Body>
+</s:Envelope>
