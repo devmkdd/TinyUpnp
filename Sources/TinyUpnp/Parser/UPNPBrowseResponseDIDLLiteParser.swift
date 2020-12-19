@@ -59,7 +59,7 @@ class UPNPBrowseResponseDIDLLiteParser: NSObject {
 // MARK: - XMLParserDelegate
 extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
     
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
         currentString = ""
         
         if elementName == DIDLLiteObjectType.container.rawValue {
