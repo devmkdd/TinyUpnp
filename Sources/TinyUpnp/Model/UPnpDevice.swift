@@ -60,7 +60,7 @@ public struct UPNPDevice {
 }
 
 
-/// MARK: - Equatable
+// MARK: - Equatable
 extension UPNPDevice: Equatable {
 
     public static func == (lhs: UPNPDevice, rhs: UPNPDevice) -> Bool {
