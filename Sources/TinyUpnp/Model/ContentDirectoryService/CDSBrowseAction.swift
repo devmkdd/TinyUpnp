@@ -8,7 +8,6 @@
 import Foundation
 import os
 
-
 public class CDSBrowseAction {
 
     
@@ -72,8 +71,6 @@ public class CDSBrowseAction {
         }
         
         task.resume()
-        
-        
         
     }
 }

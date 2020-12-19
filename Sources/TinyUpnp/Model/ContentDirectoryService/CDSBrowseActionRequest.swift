@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 public enum CdsBrowseFlag: String {
     case BrowseDirectChildren
     case BrowseMetadata

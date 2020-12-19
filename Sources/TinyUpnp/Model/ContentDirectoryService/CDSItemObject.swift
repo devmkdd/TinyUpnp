@@ -8,17 +8,12 @@
 import Foundation
 
 
-
-
-
-
 /// This is a derived class of object used to represent “atomic” content objects, i.e., object that don’t contain other objects, for example, a music track on an audio CD. The XML expression of any instance of a class that is derived from item is the <item> tag. The item class identifies the properties specified on its base class object, as well as the additional properties
 public struct CDSItemObject: CDSBaseObject {
     
     public var modificationTime: TimeInterval?
     
     public var classDefinition: String
-
    
     public var resources: [CDSResource]?
     

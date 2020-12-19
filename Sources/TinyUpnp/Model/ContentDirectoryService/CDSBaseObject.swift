@@ -18,7 +18,6 @@ public enum CDSWriteStatusValue: String {
 }
 
 
-
 public protocol CDSBaseObject {
     
     /// An unique identifier for the object with respect to the Content Directory.

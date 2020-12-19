@@ -20,7 +20,6 @@ public class UPNPBrowseResponseParser {
     fileprivate var didlLiteParser: UPNPBrowseResponseDIDLLiteParser?
     
 
-    
     public func parse(data: Data, then handler: @escaping CompletionHandler) {
         completionHandler = handler
         
@@ -36,8 +35,7 @@ public class UPNPBrowseResponseParser {
 /// MARK: - Private method
 fileprivate extension UPNPBrowseResponseParser {
     
-    
-    
+
     func parseBaseData(_ data: Data) {
         
         baseParser = UPNPBrowseResponseOuterStructureParser()

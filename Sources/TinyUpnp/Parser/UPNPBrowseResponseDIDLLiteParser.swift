@@ -40,8 +40,6 @@ class UPNPBrowseResponseDIDLLiteParser: NSObject {
     fileprivate var currentParsedElement: DIDLLiteObjectType?
     fileprivate var handlingComposer: Bool = false
     
-    
-    
     fileprivate var response: CDSBrowseResponse?
     
     func parse(data: Data, then handler: @escaping CompletionHandler) {
@@ -55,9 +53,6 @@ class UPNPBrowseResponseDIDLLiteParser: NSObject {
             completionHandler(.success(CDSBrowseResponseDIDLResult(objects: parsedItems)))
         }
     }
-    
-    
-    
 }
 
 
@@ -338,7 +333,6 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
 }
 
 
-
 // MARK: - Internal helper classes
 
 
@@ -360,8 +354,8 @@ fileprivate enum CDSContainerValueKey: String, CaseIterable {
         return possibleValues.contains(stringValue)
         
     }
-    
 }
+
 
 fileprivate enum CDSItemValueKey: String, CaseIterable {
     case id = "id"
@@ -422,6 +416,3 @@ fileprivate enum DIDLLiteObjectType: String {
     case container = "container"
     case item = "item"
 }
-
-
-
