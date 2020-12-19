@@ -21,7 +21,7 @@ public struct UPNPService {
     }
     
     
-    public mutating func updateLocation(deviceLocation: URL){
+    public mutating func updateLocation(deviceLocation: URL) {
         
         if self.parentDeviceLocation != nil {
             // don't update if it already has a location

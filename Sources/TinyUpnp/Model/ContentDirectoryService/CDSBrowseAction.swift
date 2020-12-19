@@ -16,7 +16,7 @@ public class CDSBrowseAction {
     fileprivate var completionHandler: CompletionHandler?
     
     
-    public init(){}
+    public init() {}
     
     
     public func run(request: CDSBrowseActionRequest,
@@ -53,7 +53,7 @@ public class CDSBrowseAction {
         
         urlRequest.httpBody = requestBody.data(using: .utf8)
         
-        let task = URLSession.shared.dataTask(with: urlRequest)  { data, response, error in
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data, error == nil else {
                 print(error ?? "Unknown error")
                 return

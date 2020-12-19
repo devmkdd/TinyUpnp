@@ -33,7 +33,7 @@ public struct UPNPDevice {
     }
     
     
-    public mutating func updateLocation(deviceLocation: URL){
+    public mutating func updateLocation(deviceLocation: URL) {
         
         let baseUrlString = deviceLocation.absoluteString.replacingOccurrences(of: deviceLocation.relativePath, with: "")
         guard let baseUrl = URL(string: baseUrlString) else {

@@ -74,17 +74,17 @@ extension UPNPBrowseResponseOuterStructureParser: XMLParserDelegate {
             return
         }
         
-        if elementName == "NumberReturned"  {
+        if elementName == "NumberReturned" {
             numberReturned = UInt((currentString as NSString).intValue)
             return
         }
         
-        if elementName == "TotalMatches"  {
+        if elementName == "TotalMatches" {
             totalMatches = UInt((currentString as NSString).intValue)
             return
         }
         
-        if elementName == "UpdateID"  {
+        if elementName == "UpdateID" {
             updatedId = UInt((currentString as NSString).intValue)
             return
         }
