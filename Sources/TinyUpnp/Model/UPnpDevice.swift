@@ -41,7 +41,7 @@ public struct UPNPDevice {
         }
         
         
-        if (self.location == nil) {
+        if self.location == nil {
             // only update if it already has a location
             self.location = baseUrl
         }
