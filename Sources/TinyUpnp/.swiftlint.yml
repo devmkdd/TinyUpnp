@@ -28,6 +28,10 @@ opt_in_rules:
   - multiline_function_chains
   - multiline_literal_brackets
   - multiline_parameters
+  - operator_usage_whitespace
+  - switch_case_on_newline
+  - trailing_closure
+
 
 #setup trailing whitespaces only for code and not for empty lines
 trailing_whitespace: 

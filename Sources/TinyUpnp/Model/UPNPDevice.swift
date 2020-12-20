@@ -28,7 +28,7 @@ public struct UPNPDevice {
     
     public func contentDirectoryService() -> UPNPService? {
         
-        let contentDirectoryService = serviceList.filter({ $0.serviceType == "urn:schemas-upnp-org:service:ContentDirectory:1" }).first
+        let contentDirectoryService = serviceList.filter { $0.serviceType == "urn:schemas-upnp-org:service:ContentDirectory:1" }.first
         return contentDirectoryService
     }
     
