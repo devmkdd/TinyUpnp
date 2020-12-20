@@ -397,18 +397,18 @@ fileprivate enum CDSItemValueKey: String, CaseIterable {
 
 
 fileprivate enum CDSResourceValueKey: String, CaseIterable {
-    case uri = "uri"
-    case importUri = "importUri"
-    case protocolInfo = "protocolInfo"
-    case size = "size"
-    case duration = "duration"
-    case bitrate = "bitrate"
-    case sampleFrequency = "sampleFrequency"
-    case bitsPerSample = "bitsPerSample"
-    case nrAudioChannels = "nrAudioChannels"
-    case resolution = "resolution"
-    case colorDepth = "colorDepth"
-    case protection = "protection"
+    case uri
+    case importUri
+    case protocolInfo
+    case size
+    case duration
+    case bitrate
+    case sampleFrequency
+    case bitsPerSample
+    case nrAudioChannels
+    case resolution
+    case colorDepth
+    case protection
     
     static func isValidValue(stringValue: String) -> Bool {
         
@@ -420,6 +420,6 @@ fileprivate enum CDSResourceValueKey: String, CaseIterable {
 
 
 fileprivate enum DIDLLiteObjectType: String {
-    case container = "container"
-    case item = "item"
+    case container
+    case item
 }
