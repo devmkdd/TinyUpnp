@@ -9,12 +9,12 @@ import Foundation
 import os
 
 
-struct CDSBrowseResponseDIDLResult {
+internal struct CDSBrowseResponseDIDLResult {
     let objects: [CDSBaseObject]
     
 }
 
-class UPNPBrowseResponseDIDLLiteParser: NSObject {
+internal class UPNPBrowseResponseDIDLLiteParser: NSObject {
     
     typealias CompletionHandler = (Result<CDSBrowseResponseDIDLResult, Error>) -> Void
     fileprivate var completionHandler: CompletionHandler?

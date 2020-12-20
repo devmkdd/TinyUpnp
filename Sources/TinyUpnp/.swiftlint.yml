@@ -39,9 +39,4 @@ function_body_length:
 type_body_length:
   - 300 # warning
   - 400 # error
-variable_name_max_length:
-  - 30 # warning
-  - 40 # error
-variable_name_min_length:
-  - 2 # warning
-  - 1 # error
+

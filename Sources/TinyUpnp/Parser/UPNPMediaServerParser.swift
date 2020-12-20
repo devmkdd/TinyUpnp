@@ -96,7 +96,7 @@ extension UPNPMediaServerParser: XMLParserDelegate {
 }
 
 
-class ParsingError: Error {}
+public class ParsingError: Error {}
 
 // MARK: - Private Parsing helpers
 extension UPNPMediaServerParser {
