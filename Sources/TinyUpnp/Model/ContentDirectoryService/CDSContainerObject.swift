@@ -14,7 +14,9 @@ public struct CDSContainerObject: CDSBaseObject {
     public var modificationTime: TimeInterval?
     
     public var classDefinition: String
-        
+
+    // swiftlint:disable identifier_name
+    // -> disbled to match property name of the defined standard
     public var id: String
     public var writeStatus: CDSWriteStatusValue?
     public var parentID: String

@@ -20,6 +20,8 @@ public enum CDSWriteStatusValue: String {
 
 public protocol CDSBaseObject {
     
+    // swiftlint:disable identifier_name
+    // -> disbled to match property name of the defined standard
     /// An unique identifier for the object with respect to the Content Directory.
     var id: String { get set }
     

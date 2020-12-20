@@ -256,7 +256,7 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
     func containerFromDictionary(_ dict: [CDSContainerValueKey: String]) -> CDSContainerObject? {
         
         guard let title = dict[.title],
-              let id = dict[.id],
+              let containerId = dict[.id],
               let parentId = dict[.parentID],
               let restrictedStr = dict[.restricted],
               let classDefinition = dict[.classDefinition] else {
@@ -266,7 +266,7 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
         let searchable = (dict[.searchable] as NSString?)?.boolValue
         
         var container = CDSContainerObject(classDefinition: classDefinition,
-                                           id: id,
+                                           id: containerId,
                                            writeStatus: nil,
                                            parentID: parentId,
                                            title: title,
@@ -292,7 +292,7 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
     func itemFromDictionary(_ dict: [CDSItemValueKey: String]) ->  CDSItemObject? {
         
         guard let title = dict[.title],
-              let id = dict[.id],
+              let itemId = dict[.id],
               let parentId = dict[.parentID],
               let restrictedStr = dict[.restricted],
               let classDefinition = dict[.classDefinition] else {
@@ -303,7 +303,7 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
         var item = CDSItemObject(classDefinition: classDefinition,
                                  resources: resources,
                                  parentID: parentId,
-                                 id: id,
+                                 id: itemId,
                                  writeStatus: nil,
                                  title: title,
                                  creator: nil,
@@ -337,6 +337,9 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
 
 
 fileprivate enum CDSContainerValueKey: String, CaseIterable {
+    
+    // swiftlint:disable identifier_name
+    // -> disbled to match property name of the defined standard
     case id = "id"
     case parentID = "parentID"
     case title = "dc:title"
@@ -358,6 +361,9 @@ fileprivate enum CDSContainerValueKey: String, CaseIterable {
 
 
 fileprivate enum CDSItemValueKey: String, CaseIterable {
+    
+    // swiftlint:disable identifier_name
+    // -> disbled to match property name of the defined standard
     case id = "id"
     case parentID = "parentID"
     case album = "upnp:album"

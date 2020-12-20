@@ -22,6 +22,8 @@ public struct CDSItemObject: CDSBaseObject {
         
     public var parentID: String
     
+    // swiftlint:disable identifier_name
+    // -> disbled to match property name of the defined standard 
     public var id: String
     
     public var writeStatus: CDSWriteStatusValue?

@@ -9,8 +9,8 @@ import Foundation
 
 
 public enum CdsBrowseFlag: String {
-    case BrowseDirectChildren
-    case BrowseMetadata
+    case browseDirectChildren = "BrowseDirectChildren"
+    case browseMetadata = "BrowseMetadata"
 }
 
 /// This struct describes a browse action on a content directory service containing the input properties for querying the service
@@ -25,7 +25,7 @@ public struct CDSBrowseActionRequest {
     public var sortCriteria: String
     
     public init(objectId: String = "0",
-         browseFlag: CdsBrowseFlag = .BrowseDirectChildren,
+         browseFlag: CdsBrowseFlag = .browseDirectChildren,
          filter: String = "*",
          startingIndex: UInt = 0,
          requestedCount: UInt = 0,
