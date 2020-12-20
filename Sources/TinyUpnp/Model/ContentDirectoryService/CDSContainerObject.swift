@@ -8,7 +8,9 @@
 import Foundation
 
 
-/// This is a derived class of object used to represent containers e.g. a music album. The XML expression of any instance of a class that is derived from container is the <container> tag. The container class identifies the properties specified on its base class object, as well as dditional properties
+/// This is a derived class of object used to represent containers e.g. a music album.
+/// The XML expression of any instance of a class that is derived from container is the <container> tag.
+/// The container class identifies the properties specified on its base class object, as well as dditional properties
 public struct CDSContainerObject: CDSBaseObject {
  
     public var modificationTime: TimeInterval?

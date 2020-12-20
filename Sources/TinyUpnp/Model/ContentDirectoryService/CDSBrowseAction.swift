@@ -47,9 +47,6 @@ public class CDSBrowseAction {
         requestBody.append("<RequestedCount>\(request.requestedCount)</RequestedCount>")
         requestBody.append("<SortCriteria>\(request.sortCriteria)</SortCriteria>")
         requestBody.append("</u:Browse></s:Body></s:Envelope>")
-        /*
-         let requestBody = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:Browse xmlns:u=\"urn:schemas-upnp-org:service:ContentDirectory:1\"><ObjectID>0</ObjectID><BrowseFlag>BrowseDirectChildren</BrowseFlag><Filter>*</Filter><StartingIndex>0</StartingIndex><RequestedCount>0</RequestedCount><SortCriteria>0</SortCriteria></u:Browse></s:Body></s:Envelope>"
-         */
         
         urlRequest.httpBody = requestBody.data(using: .utf8)
         

@@ -25,7 +25,8 @@ public protocol CDSBaseObject {
     /// An unique identifier for the object with respect to the Content Directory.
     var id: String { get set }
     
-    /// id property of object’s parent. The parentID of the Content Directory ‘root’ container must be set to the reserved value of “-1”. No other parentID attribute of any other Content Directory object may take this value.
+    /// id property of object’s parent. The parentID of the Content Directory ‘root’ container must be set to the reserved value of “-1”.
+    /// No other parentID attribute of any other Content Directory object may take this value.
     var parentID: String { get set }
     
     /// Name of the object
@@ -40,7 +41,8 @@ public protocol CDSBaseObject {
     /// When true, ability to modify a given object is confined to the Content Directory Service. Control point metadata write access is disabled.
     var restricted: Bool { get set }
     
-    /// When present, controls the modifiability of the resources of a given object. Ability of a Control Point to change writeStatus of a given resource(s) is implementation dependent.
+    /// When present, controls the modifiability of the resources of a given object.
+    /// Ability of a Control Point to change writeStatus of a given resource(s) is implementation dependent.
     var writeStatus: CDSWriteStatusValue? { get set }
     
     ///

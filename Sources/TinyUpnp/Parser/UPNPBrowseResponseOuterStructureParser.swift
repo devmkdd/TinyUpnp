@@ -55,7 +55,8 @@ public class UPNPBrowseResponseOuterStructureParser: NSObject {
 // MARK: - XMLParserDelegate
 extension UPNPBrowseResponseOuterStructureParser: XMLParserDelegate {
     
-    public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
+    public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?,
+                       attributes attributeDict: [String: String] = [:]) {
         currentString = ""
     }
     
