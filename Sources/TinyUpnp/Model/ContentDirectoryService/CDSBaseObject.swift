@@ -46,7 +46,7 @@ public protocol CDSBaseObject {
     var writeStatus: CDSWriteStatusValue? { get set }
     
     ///
-    var classDefinition: String { get set}
+    var classDefinition: String { get set }
     
     /// The modification time of the object (on disc) in Unix time
     var modificationTime: TimeInterval? { get set }

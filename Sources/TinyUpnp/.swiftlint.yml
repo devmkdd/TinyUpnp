@@ -5,6 +5,9 @@ disabled_rules: # rule identifiers to exclude from running
 
 # parameterized rules can be customized from this point
 opt_in_rules:
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
 
 #setup trailing whitespaces only for code and not for empty lines
 trailing_whitespace: 
