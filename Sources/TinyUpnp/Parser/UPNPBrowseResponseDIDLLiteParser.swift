@@ -236,8 +236,6 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
                 dictCurrentItem[containerKey] = currentString
                 return
             }
-            break
-            
         }
     }
     
