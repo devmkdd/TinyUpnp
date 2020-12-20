@@ -35,6 +35,7 @@ opt_in_rules:
   - unused_import
   - vertical_parameter_alignment_on_call
   - vertical_whitespace_between_cases
+  - yoda_condition
 
 
 #setup trailing whitespaces only for code and not for empty lines
