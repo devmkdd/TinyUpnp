@@ -2,32 +2,8 @@ disabled_rules: # rule identifiers to exclude from running
   - private_over_fileprivate #prefered to reduce the complexity of a class and have the ability to add private structures to only this class/ file
   - file_length
   - unused_closure_parameter
- # - vertical_whitespace
-#  - colon
-#  - comma
-#  - control_statement
-#  - force_cast
-#  - force_try
-#  - function_body_length
-#  - leading_whitespace
-#  - line_length
-#  - nesting
-#  - operator_whitespace
-#  - opening_brace
-#  - return_arrow_whitespace
-#  - statement_position
-#  - todo
-#  - trailing_newline
-#  - trailing_semicolon
-#  - trailing_whitespace
-#  - type_body_length
-#  - type_name
-#  - valid_docs
-#  - variable_name
-#  - variable_name_min_length
-#  - variable_name_max_length
-# parameterized rules can be customized from this configuration file
 
+# parameterized rules can be customized from this point
 opt_in_rules:
 
 #setup trailing whitespaces only for code and not for empty lines
