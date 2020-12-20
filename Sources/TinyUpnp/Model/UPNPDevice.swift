@@ -28,12 +28,12 @@ public struct UPNPDevice {
     
     public func contentDirectoryService() -> UPNPService? {
         
-        let contentDirectoryService = serviceList.filter({ $0.serviceType == "urn:schemas-upnp-org:service:ContentDirectory:1" }).first
+        let contentDirectoryService = serviceList.filter { $0.serviceType == "urn:schemas-upnp-org:service:ContentDirectory:1" }.first
         return contentDirectoryService
     }
     
     
-    public mutating func updateLocation(deviceLocation: URL){
+    public mutating func updateLocation(deviceLocation: URL) {
         
         let baseUrlString = deviceLocation.absoluteString.replacingOccurrences(of: deviceLocation.relativePath, with: "")
         guard let baseUrl = URL(string: baseUrlString) else {
@@ -41,7 +41,7 @@ public struct UPNPDevice {
         }
         
         
-        if (self.location == nil) {
+        if self.location == nil {
             // only update if it already has a location
             self.location = baseUrl
         }
@@ -60,12 +60,11 @@ public struct UPNPDevice {
 }
 
 
-/// MARK: - Equatable
+// MARK: - Equatable
 extension UPNPDevice: Equatable {
+
     public static func == (lhs: UPNPDevice, rhs: UPNPDevice) -> Bool {
         return lhs.udn == rhs.udn
     }
-    
-    
     
 }

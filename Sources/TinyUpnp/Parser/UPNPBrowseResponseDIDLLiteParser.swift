@@ -9,12 +9,12 @@ import Foundation
 import os
 
 
-struct CDSBrowseResponseDIDLResult {
+internal struct CDSBrowseResponseDIDLResult {
     let objects: [CDSBaseObject]
     
 }
 
-class UPNPBrowseResponseDIDLLiteParser: NSObject {
+internal class UPNPBrowseResponseDIDLLiteParser: NSObject {
     
     typealias CompletionHandler = (Result<CDSBrowseResponseDIDLResult, Error>) -> Void
     fileprivate var completionHandler: CompletionHandler?
@@ -40,8 +40,6 @@ class UPNPBrowseResponseDIDLLiteParser: NSObject {
     fileprivate var currentParsedElement: DIDLLiteObjectType?
     fileprivate var handlingComposer: Bool = false
     
-    
-    
     fileprivate var response: CDSBrowseResponse?
     
     func parse(data: Data, then handler: @escaping CompletionHandler) {
@@ -55,30 +53,25 @@ class UPNPBrowseResponseDIDLLiteParser: NSObject {
             completionHandler(.success(CDSBrowseResponseDIDLResult(objects: parsedItems)))
         }
     }
-    
-    
-    
 }
 
 
 // MARK: - XMLParserDelegate
 extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
     
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+    func parser(_ parser: XMLParser,
+                didStartElement elementName: String,
+                namespaceURI: String?,
+                qualifiedName qName: String?,
+                attributes attributeDict: [String: String] = [:]) {
+        
         currentString = ""
         
         if elementName == DIDLLiteObjectType.container.rawValue {
             dictCurrentContainer.removeAll()
             currentParsedElement = .container
             
-            for key in attributeDict.keys {
-                
-                if CDSContainerValueKey.isValidValue(stringValue: key),
-                   let containerKey = CDSContainerValueKey.init(rawValue: key) {
-                    dictCurrentContainer[containerKey] = attributeDict[key]
-                }
-            }
-            
+            handleAttributesForContainer(attributeDict: attributeDict)
             return
         }
         
@@ -86,27 +79,14 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
             dictCurrentItem.removeAll()
             currentParsedElement = .item
             
-            for key in attributeDict.keys {
-                
-                if CDSItemValueKey.isValidValue(stringValue: key),
-                   let containerKey = CDSItemValueKey.init(rawValue: key) {
-                    dictCurrentItem[containerKey] = attributeDict[key]
-                }
-            }
-            
+            handleAttributesForItem(attributeDict: attributeDict)
             return
         }
         
         if elementName == "res" {
             dictCurrentResourceEntry.removeAll()
             
-            for key in attributeDict.keys {
-                
-                if CDSResourceValueKey.isValidValue(stringValue: key),
-                   let containerKey = CDSResourceValueKey.init(rawValue: key) {
-                    dictCurrentResourceEntry[containerKey] = attributeDict[key]
-                }
-            }
+            handleAttributesForRessource(attributeDict: attributeDict)
             return
         }
         
@@ -118,9 +98,8 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
         if elementName == CDSItemValueKey.albumArtURI.rawValue {
             albumArtUris.removeAll()
         }
-        
-        
     }
+        
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         currentString += string
@@ -160,56 +139,9 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
             dictCurrentContainer.removeAll()
             
         case "res":
-            
-            guard let protocolInfo = dictCurrentResourceEntry[.protocolInfo] as? String else {
-                return
+            if let resource = parseResource(from: dictCurrentResourceEntry) {
+                resources.append(resource)
             }
-            
-            let uri = currentString
-            
-            
-            var resource = CDSResource(uri: uri, protocolInfo: protocolInfo)
-            if let importUri = dictCurrentResourceEntry[.importUri] as? String {
-                resource.importUri = importUri
-            }
-            
-            if let size = dictCurrentResourceEntry[.size] as? UInt {
-                resource.size = size
-            }
-            
-            if let duration = dictCurrentResourceEntry[.duration] as? String {
-                resource.duration = duration
-            }
-            
-            if let bitrate = dictCurrentResourceEntry[.bitrate] as? UInt {
-                resource.bitrate = bitrate
-            }
-            
-            if let sampleFrequency = dictCurrentResourceEntry[.bitrate] as? UInt {
-                resource.sampleFrequency = sampleFrequency
-            }
-            
-            if let bitsPerSample = dictCurrentResourceEntry[.bitsPerSample] as? UInt {
-                resource.bitsPerSample = bitsPerSample
-            }
-            
-            if let nrAudioChannels = dictCurrentResourceEntry[.nrAudioChannels] as? UInt {
-                resource.nrAudioChannels = nrAudioChannels
-            }
-            
-            if let resolution = dictCurrentResourceEntry[.resolution] as? String {
-                resource.resolution = resolution
-            }
-            
-            if let protection = dictCurrentResourceEntry[.protection] as? String {
-                resource.protection = protection
-            }
-            
-            if let colorDepth = dictCurrentResourceEntry[.colorDepth] as? UInt {
-                resource.colorDepth = colorDepth
-            }
-            
-            resources.append(resource)
             dictCurrentResourceEntry.removeAll()
             
         default:
@@ -240,8 +172,6 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
                 dictCurrentItem[containerKey] = currentString
                 return
             }
-            break
-            
         }
     }
     
@@ -257,11 +187,72 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
 fileprivate extension UPNPBrowseResponseDIDLLiteParser {
     
     
+    // helper method to create a ressource out of the parsedDict
+    func parseResource(from resourceDict: [CDSResourceValueKey: Any]) -> CDSResource? {
+        
+        guard let protocolInfo = resourceDict[.protocolInfo] as? String else {
+            return nil
+        }
+        
+        let uri = currentString
+        
+        var resource = CDSResource(uri: uri, protocolInfo: protocolInfo)
+        resource.importUri = resourceDict[.importUri] as? String
+        resource.size = resourceDict[.size] as? UInt
+        resource.duration = resourceDict[.duration] as? String
+        resource.bitrate = resourceDict[.bitrate] as? UInt
+        resource.sampleFrequency = resourceDict[.bitrate] as? UInt
+        resource.bitsPerSample = resourceDict[.bitsPerSample] as? UInt
+        resource.nrAudioChannels = resourceDict[.nrAudioChannels] as? UInt
+        resource.resolution = resourceDict[.resolution] as? String
+        resource.protection = resourceDict[.protection] as? String
+        resource.colorDepth = resourceDict[.colorDepth] as? UInt
+        
+        return resource
+    }
+    
+    
+    func handleAttributesForRessource(attributeDict: [String: String]) {
+        
+        for key in attributeDict.keys {
+            
+            if CDSResourceValueKey.isValidValue(stringValue: key),
+               let containerKey = CDSResourceValueKey.init(rawValue: key) {
+                dictCurrentResourceEntry[containerKey] = attributeDict[key]
+            }
+        }
+    }
+    
+    
+    func handleAttributesForItem(attributeDict: [String: String]) {
+        
+        for key in attributeDict.keys {
+            
+            if CDSItemValueKey.isValidValue(stringValue: key),
+               let containerKey = CDSItemValueKey.init(rawValue: key) {
+                dictCurrentItem[containerKey] = attributeDict[key]
+            }
+        }
+    }
+    
+    
+    func handleAttributesForContainer(attributeDict: [String: String]) {
+        
+        for key in attributeDict.keys {
+            
+            if CDSContainerValueKey.isValidValue(stringValue: key),
+               let containerKey = CDSContainerValueKey.init(rawValue: key) {
+                dictCurrentContainer[containerKey] = attributeDict[key]
+            }
+        }
+    }
+    
+    
     /// Helper method to construct the container out of the passed dictionary
     func containerFromDictionary(_ dict: [CDSContainerValueKey: String]) -> CDSContainerObject? {
         
         guard let title = dict[.title],
-              let id = dict[.id],
+              let containerId = dict[.id],
               let parentId = dict[.parentID],
               let restrictedStr = dict[.restricted],
               let classDefinition = dict[.classDefinition] else {
@@ -271,7 +262,7 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
         let searchable = (dict[.searchable] as NSString?)?.boolValue
         
         var container = CDSContainerObject(classDefinition: classDefinition,
-                                           id: id,
+                                           id: containerId,
                                            writeStatus: nil,
                                            parentID: parentId,
                                            title: title,
@@ -294,10 +285,10 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
     
     /// Helper method to construct the item out of the passed dictionary
 
-    func itemFromDictionary(_ dict: [CDSItemValueKey: String]) ->  CDSItemObject? {
+    func itemFromDictionary(_ dict: [CDSItemValueKey: String]) -> CDSItemObject? {
         
         guard let title = dict[.title],
-              let id = dict[.id],
+              let itemId = dict[.id],
               let parentId = dict[.parentID],
               let restrictedStr = dict[.restricted],
               let classDefinition = dict[.classDefinition] else {
@@ -308,7 +299,7 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
         var item = CDSItemObject(classDefinition: classDefinition,
                                  resources: resources,
                                  parentID: parentId,
-                                 id: id,
+                                 id: itemId,
                                  writeStatus: nil,
                                  title: title,
                                  creator: nil,
@@ -338,11 +329,13 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
 }
 
 
-
 // MARK: - Internal helper classes
 
 
 fileprivate enum CDSContainerValueKey: String, CaseIterable {
+    
+    // swiftlint:disable identifier_name
+    // -> disbled to match property name of the defined standard
     case id = "id"
     case parentID = "parentID"
     case title = "dc:title"
@@ -360,10 +353,13 @@ fileprivate enum CDSContainerValueKey: String, CaseIterable {
         return possibleValues.contains(stringValue)
         
     }
-    
 }
 
+
 fileprivate enum CDSItemValueKey: String, CaseIterable {
+    
+    // swiftlint:disable identifier_name
+    // -> disbled to match property name of the defined standard
     case id = "id"
     case parentID = "parentID"
     case album = "upnp:album"
@@ -396,18 +392,18 @@ fileprivate enum CDSItemValueKey: String, CaseIterable {
 
 
 fileprivate enum CDSResourceValueKey: String, CaseIterable {
-    case uri = "uri"
-    case importUri = "importUri"
-    case protocolInfo = "protocolInfo"
-    case size = "size"
-    case duration = "duration"
-    case bitrate = "bitrate"
-    case sampleFrequency = "sampleFrequency"
-    case bitsPerSample = "bitsPerSample"
-    case nrAudioChannels = "nrAudioChannels"
-    case resolution = "resolution"
-    case colorDepth = "colorDepth"
-    case protection = "protection"
+    case uri
+    case importUri
+    case protocolInfo
+    case size
+    case duration
+    case bitrate
+    case sampleFrequency
+    case bitsPerSample
+    case nrAudioChannels
+    case resolution
+    case colorDepth
+    case protection
     
     static func isValidValue(stringValue: String) -> Bool {
         
@@ -419,9 +415,6 @@ fileprivate enum CDSResourceValueKey: String, CaseIterable {
 
 
 fileprivate enum DIDLLiteObjectType: String {
-    case container = "container"
-    case item = "item"
+    case container
+    case item
 }
-
-
-

@@ -9,7 +9,6 @@ import Foundation
 import os
 
 
-
 public struct CDSBrowseResponseBaseResult {
     public let numberReturned: UInt
     public let totalMatches: UInt
@@ -30,12 +29,7 @@ public class UPNPBrowseResponseOuterStructureParser: NSObject {
     
     
     fileprivate var currentString: String = ""
-    
-    
-    
-    
     fileprivate var completionHandler: CompletionHandler?
-    
     
     fileprivate var response: CDSBrowseResponse?
     
@@ -55,15 +49,17 @@ public class UPNPBrowseResponseOuterStructureParser: NSObject {
         completionHandler?(.success(resultData))
         
     }
-       
-    
 }
 
 
-/// MARK: - XMLParserDelegate
+// MARK: - XMLParserDelegate
 extension UPNPBrowseResponseOuterStructureParser: XMLParserDelegate {
     
-    public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+    public func parser(_ parser: XMLParser,
+                       didStartElement elementName: String,
+                       namespaceURI: String?,
+                       qualifiedName qName: String?,
+                       attributes attributeDict: [String: String] = [:]) {
         currentString = ""
     }
     
@@ -74,7 +70,6 @@ extension UPNPBrowseResponseOuterStructureParser: XMLParserDelegate {
     
     public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
-
         os_log(.info, "didEndElement %s", elementName)
         
         if elementName == "Result" {
@@ -83,17 +78,17 @@ extension UPNPBrowseResponseOuterStructureParser: XMLParserDelegate {
             return
         }
         
-        if elementName == "NumberReturned"  {
+        if elementName == "NumberReturned" {
             numberReturned = UInt((currentString as NSString).intValue)
             return
         }
         
-        if elementName == "TotalMatches"  {
+        if elementName == "TotalMatches" {
             totalMatches = UInt((currentString as NSString).intValue)
             return
         }
         
-        if elementName == "UpdateID"  {
+        if elementName == "UpdateID" {
             updatedId = UInt((currentString as NSString).intValue)
             return
         }

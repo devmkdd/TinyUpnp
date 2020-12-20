@@ -49,9 +49,12 @@ public class UPNPMediaServerParser: NSObject {
 extension UPNPMediaServerParser: XMLParserDelegate {
     
     
-    
-    
-    public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+    public func parser(_ parser: XMLParser,
+                       didStartElement elementName: String,
+                       namespaceURI: String?,
+                       qualifiedName qName: String?,
+                       attributes attributeDict: [String: String] = [:]) {
+        
         currentString = ""
     }
     
@@ -61,8 +64,6 @@ extension UPNPMediaServerParser: XMLParserDelegate {
 
     
     public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
-        
         
         if UPNPDeviceValueKey.isValidValue(stringValue: elementName),
            let deviceKey = UPNPDeviceValueKey.init(rawValue: elementName) {
@@ -99,7 +100,7 @@ extension UPNPMediaServerParser: XMLParserDelegate {
 }
 
 
-class ParsingError: Error {}
+public class ParsingError: Error {}
 
 // MARK: - Private Parsing helpers
 extension UPNPMediaServerParser {
@@ -138,10 +139,7 @@ extension UPNPMediaServerParser {
                           upc: dictDevice[.upc],
                           serviceList: services)
     }
-    
 }
-
-
 
 
 fileprivate enum UPNPDeviceValueKey: String, CaseIterable {
@@ -164,7 +162,6 @@ fileprivate enum UPNPDeviceValueKey: String, CaseIterable {
         return possibleValues.contains(stringValue)
         
     }
-    
 }
 
 

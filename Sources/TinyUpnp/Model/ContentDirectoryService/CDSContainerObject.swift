@@ -8,13 +8,17 @@
 import Foundation
 
 
-/// This is a derived class of object used to represent containers e.g. a music album. The XML expression of any instance of a class that is derived from container is the <container> tag. The container class identifies the properties specified on its base class object, as well as dditional properties
+/// This is a derived class of object used to represent containers e.g. a music album.
+/// The XML expression of any instance of a class that is derived from container is the <container> tag.
+/// The container class identifies the properties specified on its base class object, as well as dditional properties
 public struct CDSContainerObject: CDSBaseObject {
  
     public var modificationTime: TimeInterval?
     
     public var classDefinition: String
-        
+
+    // swiftlint:disable identifier_name
+    // -> disbled to match property name of the defined standard
     public var id: String
     public var writeStatus: CDSWriteStatusValue?
     public var parentID: String

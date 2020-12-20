@@ -20,7 +20,6 @@ public class UPNPBrowseResponseParser {
     fileprivate var didlLiteParser: UPNPBrowseResponseDIDLLiteParser?
     
 
-    
     public func parse(data: Data, then handler: @escaping CompletionHandler) {
         completionHandler = handler
         
@@ -33,15 +32,14 @@ public class UPNPBrowseResponseParser {
 }
 
 
-/// MARK: - Private method
+// MARK: - Private method
 fileprivate extension UPNPBrowseResponseParser {
     
-    
-    
+
     func parseBaseData(_ data: Data) {
         
         baseParser = UPNPBrowseResponseOuterStructureParser()
-        baseParser?.parse(data: data, then: { [weak self] result in
+        baseParser?.parse(data: data) { [weak self] result in
             
             switch result {
             case .success(let baseResponseData):
@@ -50,7 +48,6 @@ fileprivate extension UPNPBrowseResponseParser {
                       let innerDIDLData = baseResponseData.resultString?.data(using: .utf8) else {
                     return
                 }
-
                 
                 self?.parseDIDLLiteDate(innerDIDLData, on: { didlResult in
                     
@@ -71,32 +68,29 @@ fileprivate extension UPNPBrowseResponseParser {
                         completionHandler(.failure(error))
                     
                     }
-   
                 })
-                
                 
             case .failure(let error):
                 os_log(.error, "error %@", error.localizedDescription)
 
             }
-            
-        })
-        
+        }
     }
     
     
     func parseDIDLLiteDate(_ data: Data, on completion: @escaping (Result<[CDSBaseObject], Error>) -> Void) {
         
         didlLiteParser = UPNPBrowseResponseDIDLLiteParser()
-        didlLiteParser?.parse(data: data, then: { parseResult in
+        didlLiteParser?.parse(data: data) { parseResult in
             
             switch parseResult {
             case .success(let responseData):
                 completion(.success(responseData.objects))
+                
             case .failure(let error):
                 completion(.failure(error))
             }
-        })
+        }
     }
     
 }
