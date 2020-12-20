@@ -31,6 +31,10 @@ opt_in_rules:
   - operator_usage_whitespace
   - switch_case_on_newline
   - trailing_closure
+  - unowned_variable_capture
+  - unused_import
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_between_cases
 
 
 #setup trailing whitespaces only for code and not for empty lines

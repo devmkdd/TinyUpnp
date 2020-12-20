@@ -86,6 +86,7 @@ fileprivate extension UPNPBrowseResponseParser {
             switch parseResult {
             case .success(let responseData):
                 completion(.success(responseData.objects))
+                
             case .failure(let error):
                 completion(.failure(error))
             }
