@@ -288,7 +288,7 @@ fileprivate extension UPNPBrowseResponseDIDLLiteParser {
     
     /// Helper method to construct the item out of the passed dictionary
 
-    func itemFromDictionary(_ dict: [CDSItemValueKey: String]) ->  CDSItemObject? {
+    func itemFromDictionary(_ dict: [CDSItemValueKey: String]) -> CDSItemObject? {
         
         guard let title = dict[.title],
               let itemId = dict[.id],
