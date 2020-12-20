@@ -8,6 +8,13 @@ opt_in_rules:
   - attributes
   - closure_end_indentation
   - closure_spacing
+  - collection_alignment
+  - conditional_returns_on_newline
+  - discouraged_object_literal
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - explicit_top_level_acl
 
 #setup trailing whitespaces only for code and not for empty lines
 trailing_whitespace: 
