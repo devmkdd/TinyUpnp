@@ -9,7 +9,7 @@ import Foundation
 import os
 
 public class CDSBrowseAction {
-
+    
     
     public typealias CompletionHandler = (Result<CDSBrowseResponse, Error>) -> Void
     
@@ -20,8 +20,8 @@ public class CDSBrowseAction {
     
     
     public func run(request: CDSBrowseActionRequest,
-             on contentDirectoryService: UPNPService,
-             then handler: @escaping CompletionHandler) {
+                    on contentDirectoryService: UPNPService,
+                    then handler: @escaping CompletionHandler) {
         completionHandler = handler
         
         
@@ -35,7 +35,7 @@ public class CDSBrowseAction {
         var urlRequest = URLRequest(url: baseUrl)
         urlRequest.httpMethod = "POST"
         urlRequest.addValue("text/xml; charset=\"utf-8\"", forHTTPHeaderField: "Content-Type")
-            urlRequest.addValue("\"urn:schemas-upnp-org:service:ContentDirectory:1#Browse\"", forHTTPHeaderField: "SOAPACTION")
+        urlRequest.addValue("\"urn:schemas-upnp-org:service:ContentDirectory:1#Browse\"", forHTTPHeaderField: "SOAPACTION")
         
         
         var requestBody = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
@@ -48,8 +48,8 @@ public class CDSBrowseAction {
         requestBody.append("<SortCriteria>\(request.sortCriteria)</SortCriteria>")
         requestBody.append("</u:Browse></s:Body></s:Envelope>")
         /*
-        let requestBody = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:Browse xmlns:u=\"urn:schemas-upnp-org:service:ContentDirectory:1\"><ObjectID>0</ObjectID><BrowseFlag>BrowseDirectChildren</BrowseFlag><Filter>*</Filter><StartingIndex>0</StartingIndex><RequestedCount>0</RequestedCount><SortCriteria>0</SortCriteria></u:Browse></s:Body></s:Envelope>"
-        */
+         let requestBody = "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:Browse xmlns:u=\"urn:schemas-upnp-org:service:ContentDirectory:1\"><ObjectID>0</ObjectID><BrowseFlag>BrowseDirectChildren</BrowseFlag><Filter>*</Filter><StartingIndex>0</StartingIndex><RequestedCount>0</RequestedCount><SortCriteria>0</SortCriteria></u:Browse></s:Body></s:Envelope>"
+         */
         
         urlRequest.httpBody = requestBody.data(using: .utf8)
         
@@ -58,7 +58,7 @@ public class CDSBrowseAction {
                 print(error ?? "Unknown error")
                 return
             }
-                        
+            
             let parser = UPNPBrowseResponseParser()
             parser.parse(data: data) { [weak self] (result) in
                 

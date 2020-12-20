@@ -25,11 +25,11 @@ public struct CDSBrowseActionRequest {
     public var sortCriteria: String
     
     public init(objectId: String = "0",
-         browseFlag: CdsBrowseFlag = .browseDirectChildren,
-         filter: String = "*",
-         startingIndex: UInt = 0,
-         requestedCount: UInt = 0,
-         sortCriteria: String = "0") {
+                browseFlag: CdsBrowseFlag = .browseDirectChildren,
+                filter: String = "*",
+                startingIndex: UInt = 0,
+                requestedCount: UInt = 0,
+                sortCriteria: String = "0") {
         
         self.objectId = objectId
         self.browseFlag = browseFlag
