@@ -107,9 +107,7 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
     
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
-        os_log(.info, "didEndElement %s", elementName)
-        
+      
         
         switch elementName {
         
@@ -120,9 +118,12 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
                 return
             }
             
-            os_log(.debug, "container: %s", container.description)
-            parsedItems.append(container)
             
+            if #available(iOS 12.0, *) {
+                os_log(.debug, "container: %s", container.description)
+            }
+            
+            parsedItems.append(container)
             dictCurrentContainer.removeAll()
             resources.removeAll()
             
@@ -132,7 +133,10 @@ extension UPNPBrowseResponseDIDLLiteParser: XMLParserDelegate {
                 return
             }
             
-            os_log(.debug, "item: %s", item.description)
+            if #available(iOS 12.0, *) {
+                os_log(.debug, "item: %s", item.description)
+            }
+            
             parsedItems.append(item)
             resources.removeAll()
             

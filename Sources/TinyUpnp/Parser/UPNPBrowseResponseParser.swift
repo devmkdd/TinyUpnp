@@ -19,14 +19,15 @@ public class UPNPBrowseResponseParser {
     fileprivate var baseParser: UPNPBrowseResponseOuterStructureParser?
     fileprivate var didlLiteParser: UPNPBrowseResponseDIDLLiteParser?
     
-
+    
     public func parse(data: Data, then handler: @escaping CompletionHandler) {
         completionHandler = handler
         
-        if let stringData = String(data: data, encoding: .utf8) {
+        if #available(iOS 12.0, *),
+           let stringData = String(data: data, encoding: .utf8) {
             os_log(.debug, "passed data %s", stringData )
         }
- 
+        
         parseBaseData(data)
     }
 }
@@ -35,7 +36,7 @@ public class UPNPBrowseResponseParser {
 // MARK: - Private method
 fileprivate extension UPNPBrowseResponseParser {
     
-
+    
     func parseBaseData(_ data: Data) {
         
         baseParser = UPNPBrowseResponseOuterStructureParser()
@@ -43,7 +44,7 @@ fileprivate extension UPNPBrowseResponseParser {
             
             switch result {
             case .success(let baseResponseData):
-            
+                
                 guard let resultString = baseResponseData.resultString,
                       let innerDIDLData = baseResponseData.resultString?.data(using: .utf8) else {
                     return
@@ -66,13 +67,17 @@ fileprivate extension UPNPBrowseResponseParser {
                         
                     case .failure(let error):
                         completionHandler(.failure(error))
-                    
+                        
                     }
                 })
                 
             case .failure(let error):
-                os_log(.error, "error %@", error.localizedDescription)
-
+                if #available(iOS 12.0, *) {
+                    os_log(.error, "error %@", error.localizedDescription)
+                } else {
+                    // Fallback on earlier versions
+                }
+                
             }
         }
     }

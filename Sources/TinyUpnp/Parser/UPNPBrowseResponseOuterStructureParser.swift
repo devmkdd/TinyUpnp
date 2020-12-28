@@ -70,10 +70,10 @@ extension UPNPBrowseResponseOuterStructureParser: XMLParserDelegate {
     
     public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
-        os_log(.info, "didEndElement %s", elementName)
-        
         if elementName == "Result" {
-            os_log(.info, "result:  %@", self.currentString)
+            if #available(iOS 12.0, *) {
+                os_log(.info, "result:  %@", self.currentString)
+            }
             resultString = currentString
             return
         }
@@ -96,7 +96,6 @@ extension UPNPBrowseResponseOuterStructureParser: XMLParserDelegate {
     
     
     public func parserDidEndDocument(_ parser: XMLParser) {
-        os_log(.info, "parserDidEndDocument ")
         
         result = CDSBrowseResponseBaseResult(numberReturned: numberReturned,
                                              totalMatches: totalMatches,
