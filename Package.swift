@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "TinyUpnp",
     platforms: [
-           SupportedPlatform.iOS(.v12),
-           SupportedPlatform.macOS(.v10_14)
+        SupportedPlatform.iOS(.v11),
+        SupportedPlatform.macOS(.v10_14)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.

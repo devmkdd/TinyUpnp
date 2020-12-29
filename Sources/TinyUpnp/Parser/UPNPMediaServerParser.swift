@@ -82,7 +82,9 @@ extension UPNPMediaServerParser: XMLParserDelegate {
         
         case "device":
             device = deviceFromDict(deviceDict: dictDevice, services: services)
-            os_log(.debug, "device: %@", self.device.debugDescription)
+            if #available(iOS 12.0, *) {
+                os_log(.debug, "device: %@", self.device.debugDescription)
+            }
         case "service":
             guard let service = serviceFromDict(serviceDict: dictService) else {
                 return
